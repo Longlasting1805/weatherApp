@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-d+@%ky7$($8bk*1&qr5j4n)y6vf2na06m)o&2=q=+!3mdb8t0)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','the_weatherapp.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','theweatherapp34.herokuapp.com']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'weather'
+    'weather',
 ]
 
 MIDDLEWARE = [
@@ -144,5 +144,8 @@ STATICFILES_DIRS = (
 
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
 
  
